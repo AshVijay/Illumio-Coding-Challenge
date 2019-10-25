@@ -22,10 +22,11 @@ I made use of recursive hashmaps indexed by direction, protocol, "ip" and "port"
 
 One optimization I could think of was to use a merged set of port and IP intervals and perform binary search on the valid ranges until something is found. The idea behind this is to condense the range to a set of non-overlapping ranges, which could save a lot of space in cases where there are multiple overlapping ranges being stored independently. Although this makes a tradeoff for better space complexity, it still increases the worst case time complexity to O(nlog(n)) for insertion operations because, to merge intervals we need to sort the interval range. Searching is reduced to O(log(n)) because we can implement a modified version of binary search that is cognizant of the start and end of each element in the list and finds the the range where the query port or IP falls into. 
 
-i.e create mappings of the form  {  "inbound" : { "udp" : [[merged port list],[merged ip list]],  
-                                                  "tcp" : [[merged port list],[merged ip list]] }, 
-                                    "outbound": { "udp" : [[merged port list],[merged ip list]],  
-                                                  "tcp :  [[merged_port list],[merged ip list]] } 
+i.e create mappings of the form 
+{  "inbound" : { "udp" : [[merged port list],[merged ip list]],  
+                 "tcp" : [[merged port list],[merged ip list]] }, 
+  "outbound": { "udp" : [[merged port list],[merged ip list]],  
+                "tcp :  [[merged_port list],[merged ip list]] } 
                                                   }  
 
 **Complexity Analysis:**
