@@ -1,7 +1,7 @@
 1. **Testing Conditions**  
 
   I tested my code using unittest library to test for matching rules of the form    
-             -  Valid direction, valid protocol, matching single port, matching single ip    
+             - Valid direction, valid protocol, matching single port, matching single ip    
              - Valid direction, valid protocol, matching port ranges, matching single ip    
              - Valid direction, valid protocol, matching port ranges, matching ip ranges    
              - Valid direction, valid protocol, non-matching port and matching ip    
