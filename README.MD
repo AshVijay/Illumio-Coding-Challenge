@@ -24,7 +24,8 @@
 
 i.e create mappings of the form   
 {  "inbound" : { "udp" : [[merged port list],[merged ip list]],  
-                 "tcp" : [[merged port list],[merged ip list]] }, 
+                 "tcp" : [[merged port list],[merged ip list]] },   
+                 
   "outbound": { "udp" : [[merged port list],[merged ip list]],  
                 "tcp :  [[merged_port list],[merged ip list]] } 
                                                   }  
